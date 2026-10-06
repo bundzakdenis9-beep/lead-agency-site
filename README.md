@@ -20,11 +20,11 @@ npm run build    # сборка в папку dist
 
 | Что | Файл |
 |---|---|
-| Название агентства, контакты в футере, пункты меню | `src/config/site.js` |
-| Цвета и шрифты | `src/index.css` (блок `@theme`) |
-| Тексты секций | `src/components/*.jsx` |
-| Логотип | `src/components/Logo.jsx`, `public/favicon.svg` |
-| Отправка формы | `src/lib/submitLead.js` |
+| Название агентства, контакты в футере, пункты меню | `site.js` |
+| Цвета и шрифты | `index.css` (блок `@theme`) |
+| Тексты секций | `*.jsx` |
+| Логотип | `Logo.jsx`, `favicon.svg` |
+| Отправка формы | `submitLead.js` |
 
 ## Форма заявки
 
@@ -38,7 +38,7 @@ npm run build    # сборка в папку dist
    - `VITE_LEAD_ENDPOINT` = `/api/lead`
    - `TELEGRAM_BOT_TOKEN` = токен бота
    - `TELEGRAM_CHAT_ID` = id чата
-4. Сделайте **Redeploy**. Заявки будут приходить в Telegram через серверную функцию `api/lead.js` — токен не попадает в браузер.
+4. Сделайте **Redeploy**. Заявки будут приходить в Telegram через серверную функцию `api/lead.js` (на GitHub: Add file → Create new file, имя `api/lead.js`, вставить содержимое файла `lead.js`) — токен не попадает в браузер.
 
 ### Любой другой backend
 
@@ -50,21 +50,4 @@ npm run build    # сборка в папку dist
 
 ## Структура
 
-```
-api/lead.js              серверная функция Vercel → Telegram
-public/favicon.svg
-src/
-  config/site.js         название, контакты, меню
-  lib/submitLead.js      отправка и валидация заявки
-  hooks/useReveal.js     анимации появления при скролле
-  components/
-    Navbar.jsx           sticky-меню + мобильное меню
-    Hero.jsx             первый экран с анимированной лентой заявок
-    Process.jsx          4 шага с анимированной линией
-    Benefits.jsx         «Что вы получаете»
-    Audience.jsx         «Для кого»
-    About.jsx            «О нас»
-    CallToAction.jsx     финальный призыв
-    LeadModal.jsx        форма заявки
-    Footer.jsx
-```
+Все файлы лежат в одной папке, без подпапок — так проект проще загружать на GitHub через браузер.

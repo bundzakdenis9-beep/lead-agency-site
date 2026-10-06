@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { LuX, LuSend, LuLoaderCircle, LuCircleCheck } from 'react-icons/lu'
-import { submitLead, validateLead } from '../lib/submitLead'
+import { submitLead, validateLead } from './submitLead'
 
 const EMPTY = { name: '', contact: '', link: '', about: '' }
 

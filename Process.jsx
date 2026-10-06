@@ -1,6 +1,6 @@
 import { LuSearch, LuTarget, LuMessageCircle, LuHandshake } from 'react-icons/lu'
 import Reveal, { SectionHeading, trackSpotlight } from './Reveal'
-import { useReveal } from '../hooks/useReveal'
+import { useReveal } from './useReveal'
 
 const STEPS = [
   {

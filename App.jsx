@@ -1,13 +1,13 @@
 import { useCallback, useState } from 'react'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import Process from './components/Process'
-import Benefits from './components/Benefits'
-import Audience from './components/Audience'
-import About from './components/About'
-import CallToAction from './components/CallToAction'
-import Footer from './components/Footer'
-import LeadModal from './components/LeadModal'
+import Navbar from './Navbar'
+import Hero from './Hero'
+import Process from './Process'
+import Benefits from './Benefits'
+import Audience from './Audience'
+import About from './About'
+import CallToAction from './CallToAction'
+import Footer from './Footer'
+import LeadModal from './LeadModal'
 
 export default function App() {
   const [formOpen, setFormOpen] = useState(false)

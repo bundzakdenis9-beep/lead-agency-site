@@ -1,4 +1,4 @@
-import { SITE } from '../config/site'
+import { SITE } from './site'
 
 export default function Logo({ className = '' }) {
   return (

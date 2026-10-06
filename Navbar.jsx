@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { LuMenu, LuX, LuArrowRight } from 'react-icons/lu'
 import Logo from './Logo'
-import { NAV_LINKS, CTA_LABEL } from '../config/site'
+import { NAV_LINKS, CTA_LABEL } from './site'
 
 export default function Navbar({ onCta }) {
   const [scrolled, setScrolled] = useState(false)

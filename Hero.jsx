@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { LuArrowRight, LuArrowDown, LuCheck } from 'react-icons/lu'
 import Reveal from './Reveal'
-import { CTA_LABEL } from '../config/site'
+import { CTA_LABEL } from './site'
 
 // Иллюстративная лента — показывает, как выглядит поток заявок. Не реальные данные.
 const FEED = [

@@ -1,6 +1,6 @@
 import { LuShieldCheck, LuEye, LuTarget } from 'react-icons/lu'
 import Reveal from './Reveal'
-import { SITE } from '../config/site'
+import { SITE } from './site'
 
 const PRINCIPLES = [
   { icon: LuTarget, title: 'Фокус на качестве', text: 'Передаём только тех, кто действительно заинтересован.' },

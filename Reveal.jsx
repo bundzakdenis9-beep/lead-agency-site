@@ -1,4 +1,4 @@
-import { useReveal } from '../hooks/useReveal'
+import { useReveal } from './useReveal'
 
 /** Обёртка для плавного появления блока при скролле. */
 export default function Reveal({ as: Tag = 'div', delay = 0, className = '', style, children, ...rest }) {

@@ -1,5 +1,5 @@
 import Logo from './Logo'
-import { SITE, NAV_LINKS, CTA_LABEL } from '../config/site'
+import { SITE, NAV_LINKS, CTA_LABEL } from './site'
 
 export default function Footer({ onCta }) {
   return (

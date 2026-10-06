@@ -1,6 +1,6 @@
 import { LuArrowRight } from 'react-icons/lu'
 import Reveal from './Reveal'
-import { CTA_LABEL } from '../config/site'
+import { CTA_LABEL } from './site'
 
 export default function CallToAction({ onCta }) {
   return (
