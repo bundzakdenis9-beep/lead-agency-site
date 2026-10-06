@@ -38,7 +38,7 @@ export default function Navbar({ onCta }) {
     const prev = document.body.style.overflow
     document.body.style.overflow = 'hidden'
     const onKey = (e) => e.key === 'Escape' && setOpen(false)
-    const onResize = () => window.innerWidth >= 900 && setOpen(false)
+    const onResize = () => window.innerWidth >= 1180 && setOpen(false)
     window.addEventListener('keydown', onKey)
     window.addEventListener('resize', onResize)
     return () => {
@@ -59,7 +59,7 @@ export default function Navbar({ onCta }) {
       <nav className="container-x flex h-[68px] items-center justify-between gap-6" aria-label="Основная навигация">
         <Logo />
 
-        <ul className="hidden items-center gap-1 min-[900px]:flex">
+        <ul className="hidden items-center gap-1 min-[1180px]:flex">
           {NAV_LINKS.map((link) => (
             <li key={link.id}>
               <a
@@ -85,7 +85,7 @@ export default function Navbar({ onCta }) {
           </button>
           <button
             type="button"
-            className="grid size-10 place-items-center rounded-full border border-line-strong text-fg transition-colors hover:bg-white/5 min-[900px]:hidden"
+            className="grid size-10 place-items-center rounded-full border border-line-strong text-fg transition-colors hover:bg-white/5 min-[1180px]:hidden"
             onClick={() => setOpen((v) => !v)}
             aria-label={open ? 'Закрыть меню' : 'Открыть меню'}
             aria-expanded={open}
@@ -97,7 +97,7 @@ export default function Navbar({ onCta }) {
       </nav>
 
       {open && (
-        <div id="mobile-menu" className="menu-in h-[calc(100dvh-68px)] overflow-y-auto border-t border-line bg-ink min-[900px]:hidden">
+        <div id="mobile-menu" className="menu-in h-[calc(100dvh-68px)] overflow-y-auto border-t border-line bg-ink min-[1180px]:hidden">
           <div className="container-x flex h-full flex-col pt-6 pb-8">
             <ul className="flex flex-col">
               {NAV_LINKS.map((link, i) => (

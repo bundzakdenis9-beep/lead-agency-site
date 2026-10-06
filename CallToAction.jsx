@@ -1,6 +1,6 @@
-import { LuArrowRight } from 'react-icons/lu'
+import { LuArrowRight, LuSend } from 'react-icons/lu'
 import Reveal from './Reveal'
-import { CTA_LABEL } from './site'
+import { CTA_LABEL, SITE } from './site'
 
 export default function CallToAction({ onCta }) {
   return (
@@ -20,10 +20,16 @@ export default function CallToAction({ onCta }) {
               <p className="mx-auto mt-5 max-w-md text-[17px] leading-relaxed text-muted">
                 Оставьте заявку — свяжемся с вами и обсудим ваш бизнес.
               </p>
-              <button type="button" onClick={onCta} className="btn-primary mt-10 h-14 px-7 text-[16px]">
-                {CTA_LABEL}
-                <LuArrowRight className="size-[18px]" />
-              </button>
+              <div className="mt-10 flex flex-col items-center justify-center gap-3 min-[460px]:flex-row">
+                <button type="button" onClick={onCta} className="btn-primary h-14 px-7 text-[16px]">
+                  {CTA_LABEL}
+                  <LuArrowRight className="size-[18px]" />
+                </button>
+                <a href={SITE.contactTelegram} target="_blank" rel="noreferrer" className="btn-ghost h-14 px-6">
+                  <LuSend className="size-4 text-muted" />
+                  Написать в Telegram
+                </a>
+              </div>
             </div>
           </div>
         </Reveal>

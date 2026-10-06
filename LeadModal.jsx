@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { LuX, LuSend, LuLoaderCircle, LuCircleCheck } from 'react-icons/lu'
 import { submitLead, validateLead } from './submitLead'
+import { SITE } from './site'
 
 const EMPTY = { name: '', contact: '', link: '', about: '' }
 
@@ -10,7 +11,7 @@ const FIELDS = [
   { name: 'link', label: 'Ссылка на бизнес', placeholder: 'Сайт, Instagram, Telegram-канал…', autoComplete: 'url' },
 ]
 
-export default function LeadModal({ open, onClose }) {
+export default function LeadModal({ open, onClose, onPrivacy }) {
   const [values, setValues] = useState(EMPTY)
   const [errors, setErrors] = useState({})
   const [status, setStatus] = useState('idle') // idle | sending | success | error
@@ -27,6 +28,7 @@ export default function LeadModal({ open, onClose }) {
     const t = setTimeout(() => firstFieldRef.current?.focus(), 60)
 
     const onKey = (e) => {
+      if (document.body.dataset.privacy === 'open') return // поверх открыта политика
       if (e.key === 'Escape') onClose()
       if (e.key === 'Tab' && dialogRef.current) {
         const nodes = dialogRef.current.querySelectorAll('button, input, textarea, a[href]')
@@ -124,6 +126,12 @@ export default function LeadModal({ open, onClose }) {
               <p className="mx-auto mt-3 max-w-sm text-[15px] leading-relaxed text-muted">
                 Спасибо, {values.name.trim() || 'мы получили вашу заявку'}! Свяжемся с вами и обсудим ваш бизнес.
               </p>
+              <p className="mx-auto mt-3 max-w-sm text-[14px] text-dim">
+                Если удобнее, напишите нам сами в Telegram:{' '}
+                <a href={SITE.contactTelegram} target="_blank" rel="noreferrer" className="text-fg underline decoration-line-strong underline-offset-4 hover:decoration-accent">
+                  {SITE.telegramHandle}
+                </a>
+              </p>
               <button type="button" onClick={onClose} className="btn-ghost mt-8 h-12">
                 Вернуться на сайт
               </button>
@@ -200,8 +208,16 @@ export default function LeadModal({ open, onClose }) {
                   )}
                 </button>
 
-                <p className="text-center text-[12.5px] text-dim">
-                  Нажимая кнопку, вы соглашаетесь на обработку контактных данных.
+                <p className="text-center text-[12.5px] leading-relaxed text-dim">
+                  Нажимая кнопку, вы соглашаетесь с{' '}
+                  <button
+                    type="button"
+                    onClick={onPrivacy}
+                    className="text-muted underline decoration-line-strong underline-offset-2 transition-colors hover:text-fg"
+                  >
+                    политикой конфиденциальности
+                  </button>
+                  .
                 </p>
               </form>
             </>
